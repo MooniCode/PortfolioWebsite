@@ -1,20 +1,30 @@
-async function loadHeaderTemplate() {
+async function loadTemplates() {
     try {
-        const response = await fetch('../htmlTemplates/header-template.html');
-        const html = await response.text();
-       
+        // Load header
+        const headerResponse = await fetch('../htmlTemplates/header-template.html');
+        const headerHtml = await headerResponse.text();
         const headerContainer = document.getElementById('header-container');
-        headerContainer.innerHTML = html;
-        
-        // Initialize theme after header is loaded
+        headerContainer.innerHTML = headerHtml;
+
+        // Dispatch headerLoaded event right after header is loaded
+        const headerEvent = new CustomEvent('headerLoaded');
+        document.dispatchEvent(headerEvent);
+
+        // Load footer
+        const footerResponse = await fetch('../htmlTemplates/footer-template.html');
+        const footerHtml = await footerResponse.text();
+        const footerContainer = document.getElementById('footer-container');
+        footerContainer.innerHTML = footerHtml;
+
+        // Initialize theme after templates are loaded
         initializeTheme();
         
-        // Dispatch custom event when header is loaded
-        const event = new CustomEvent('headerLoaded');
+        // Dispatch custom event when templates are loaded
+        const event = new CustomEvent('templatesLoaded');
         document.dispatchEvent(event);
     } catch (error) {
-        console.error('Error loading header template:', error);
+        console.error('Error loading templates:', error);
     }
 }
 
-document.addEventListener('DOMContentLoaded', loadHeaderTemplate);
+document.addEventListener('DOMContentLoaded', loadTemplates);
