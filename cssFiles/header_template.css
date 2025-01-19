@@ -1,14 +1,14 @@
 :root {
     /* Light mode color variables */
-    --primary-color: rgb(255, 255, 255);
-    --header-color: rgb(211, 211, 211);
+    --primary-color: rgb(227, 227, 227);
+    --header-color: rgb(200, 200, 200);
     --text-color: rgb(30, 30, 30);
-    --hover-color: #b80f0a;
+    --hover-color: 	#E66000;
 }
 
 .dark-mode {
     /* Dark mode color variables */
-    --primary-color: rgb(0, 0, 0);
+    --primary-color: rgb(30, 30, 30);
     --header-color: rgb(22, 22, 22);
     --text-color: rgb(200, 200, 200);
 }
@@ -55,6 +55,7 @@ nav a {
 
 nav a:hover {
     color: var(--hover-color);
+    text-decoration: underline;
 }
 
 #theme-toggle {
@@ -69,6 +70,24 @@ nav a:hover {
 
 #theme-toggle:hover {
     color: var(--hover-color);
+}
+
+#theme-toggle i {
+    transform-origin: center;
+    transition: transform 0.7s ease, opacity 0.3s ease;
+}
+
+#theme-toggle i.fa-sun {
+    transform: rotate(180deg);
+}
+
+#theme-toggle i.fa-moon {
+    transform: rotate(0deg);
+}
+
+/* When switching, add a slight scaling effect */
+#theme-toggle:active i {
+    transform: scale(0.9);
 }
 
 .mobile-menu-btn {

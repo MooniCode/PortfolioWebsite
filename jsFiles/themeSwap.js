@@ -5,8 +5,8 @@ function initializeTheme() {
     function updateTheme(isDark) {
         // Update classes
         document.documentElement.classList.toggle('dark-mode', isDark);
-        icon.classList.toggle('fa-sun', !isDark);
-        icon.classList.toggle('fa-moon', isDark);
+        icon.classList.toggle('fa-moon', !isDark);
+        icon.classList.toggle('fa-sun', isDark);
         
         // Save preference
         localStorage.setItem('darkMode', isDark);
