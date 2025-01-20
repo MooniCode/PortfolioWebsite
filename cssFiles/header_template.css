@@ -8,6 +8,9 @@
     --accent-color: rgb(40, 92, 141);      /* Vibrant blue for accents */
     --accent-color-hover: rgb(44, 82, 130); /* Darker blue for hover states */
     --gradient-background-circle-color: rgb(0, 0, 0); /* Lighter blue for gradients */
+    --cta-color: #ee6c4d;         /* Bright sky blue for CTA */
+    --cta-color-hover: #f08469;    /* Deeper sky blue for CTA hover */
+    --drop-shadow-color: rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode {
@@ -20,6 +23,9 @@
     --accent-color: rgb(88, 166, 255);      /* Bright blue that pops on dark backgrounds */
     --accent-color-hover: rgb(121, 184, 255); /* Lighter blue for hover states */
     --gradient-background-circle-color: rgb(88, 166, 255); /* Matching accent for consistency */
+    --cta-color: #ee6c4d;         /* Bright sky blue for CTA */
+    --cta-color-hover: #f08469;    /* Deeper sky blue for CTA hover */
+    --drop-shadow-color: rgba(255, 255, 255, 0.2);
 }
 
 header {

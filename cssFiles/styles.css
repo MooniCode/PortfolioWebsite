@@ -33,15 +33,17 @@ body {
 
 .hero-text {
     flex: 1;
+    font-family: roboto;
     color: var(--text-color);
 }
 
 .hero-text h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
 }
 
 .gradient-text {
+    font-size: 4rem;
     background: linear-gradient(90deg, var(--accent-color), var(--accent-color-hover));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -63,6 +65,7 @@ body {
 }
 
 .tech-badge {
+    font-family: monospace;
     background-color: var(--accent-color-hover);
     color: white;
     padding: 8px 16px;
@@ -75,8 +78,8 @@ body {
     padding: 12px 24px;
     font-size: 18px;
     font-weight: 600;
-    color: white;
-    background-color: var(--accent-color);
+    color: var(--text-color);
+    background-color: var(--cta-color);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -85,8 +88,9 @@ body {
   }
 
 .cta-button:hover {
-    background-color: var(--accent-color-hover);
+    background-color: var(--cta-color-hover);
     transform: translateY(-1px);
+    box-shadow: 4px 4px 0px var(--drop-shadow-color);
 }
 
 .cta-button:active {
