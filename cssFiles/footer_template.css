@@ -27,7 +27,7 @@ footer {
 }
 
 .footer-logo:hover {
-    fill: var(--hover-color);
+    fill: var(--accent-color);
 }
 
 .footer-nav {
@@ -43,7 +43,7 @@ footer {
 }
 
 .footer-nav a:hover {
-    color: var(--hover-color);
+    color: var(--accent-color);
 }
 
 .social-links {
@@ -58,7 +58,7 @@ footer {
 }
 
 .social-links a:hover {
-    color: var(--hover-color);
+    color: var(--accent-color);
 }
 
 .social-links a svg {
@@ -69,7 +69,7 @@ footer {
 }
 
 .social-links a:hover svg {
-    fill: var(--hover-color);
+    fill: var(--accent-color);
 }
 
 .social-links svg path {

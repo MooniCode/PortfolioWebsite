@@ -1,23 +1,35 @@
 :root {
     /* Light mode color variables */
-    --primary-color: rgb(227, 227, 227);
-    --header-color: rgb(200, 200, 200);
-    --text-color: rgb(30, 30, 30);
-    --hover-color: 	#E66000;
+    --header-color: rgb(108, 123, 149);     /* Muted blue-grey for headers */
+    --primary-color1: rgb(237, 242, 247);   /* Very light blue-grey for backgrounds */
+    --primary-color2: rgb(226, 232, 240);   /* Slightly darker blue-grey for secondary elements */
+    --text-color: rgb(30, 38, 52);          /* Dark blue-grey for main text */
+    --title-color: rgb(26, 32, 44);         /* Deeper blue-grey for titles */
+    --accent-color: rgb(40, 92, 141);      /* Vibrant blue for accents */
+    --accent-color-hover: rgb(44, 82, 130); /* Darker blue for hover states */
+    --gradient-background-circle-color: rgb(0, 0, 0); /* Lighter blue for gradients */
 }
 
 .dark-mode {
     /* Dark mode color variables */
-    --primary-color: rgb(30, 30, 30);
-    --header-color: rgb(22, 22, 22);
-    --text-color: rgb(200, 200, 200);
+    --header-color: rgb(17, 25, 40);        /* Deep navy for headers */
+    --primary-color1: rgb(13, 17, 23);      /* Rich dark background */
+    --primary-color2: rgb(22, 27, 34);      /* Slightly lighter for secondary elements */
+    --text-color: rgb(230, 237, 243);       /* Soft white for better readability */
+    --title-color: rgb(255, 255, 255);      /* Pure white for titles */
+    --accent-color: rgb(88, 166, 255);      /* Bright blue that pops on dark backgrounds */
+    --accent-color-hover: rgb(121, 184, 255); /* Lighter blue for hover states */
+    --gradient-background-circle-color: rgb(88, 166, 255); /* Matching accent for consistency */
 }
 
 header {
     background-color: var(--header-color);
-    padding: 1rem;
+    padding: 0.75rem;
     font-family: monospace;
-    position: relative;  
+    position: fixed;  /* Changed from sticky to fixed */
+    top: 0;
+    left: 0;         /* Add this */
+    right: 0;        /* Add this */
     z-index: 1000;    
 }
 
@@ -37,7 +49,7 @@ header {
 }
 
 .logo:hover{
-    fill: var(--hover-color);
+    fill: var(--accent-color);
 }
 
 nav {
@@ -54,7 +66,7 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--hover-color);
+    color: var(--accent-color);
     text-decoration: underline;
 }
 
@@ -69,7 +81,7 @@ nav a:hover {
 }
 
 #theme-toggle:hover {
-    color: var(--hover-color);
+    color: var(--accent-color);
 }
 
 #theme-toggle i {
@@ -98,14 +110,14 @@ nav a:hover {
     cursor: pointer;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     .mobile-menu-btn {
         display: block;
         transition: color 0.3s ease;
         color: var(--text-color);
     }
     .mobile-menu-btn:hover{
-        color: var(--hover-color);
+        color: var(--accent-color);
     }
     .header-container nav {  /* Make more specific by including parent */
         display: none;
