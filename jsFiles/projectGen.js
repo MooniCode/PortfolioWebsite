@@ -93,7 +93,7 @@ const projects = {
             description: "The final assignment for 3D1 at DAE - Kortrijk. It's a scene that takes place somwhere in Norway.",
             image: "/images/Content/projects/Desk.png",
             tags: ["Maya", "Photoshop"]
-        }
+        },
     ]
 };
 

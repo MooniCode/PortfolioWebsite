@@ -1,6 +1,6 @@
 :root {
     /* Light mode color variables */
-    --header-color: rgb(108, 123, 149);
+    --header-color: #6c7b95;
     --primary-color1: rgb(237, 242, 247);
     --primary-color2: rgb(226, 232, 240);
     --text-color: rgb(30, 38, 52);
@@ -125,6 +125,7 @@ nav a:hover {
     .mobile-menu-btn:hover{
         color: var(--accent-color);
     }
+    
     .header-container nav {  /* Make more specific by including parent */
         display: none;
         width: 100%;
@@ -140,5 +141,11 @@ nav a:hover {
     }
     .header-container nav a {  /* Make more specific by including parent */
         text-align: center;
+    }
+}
+
+@media (max-width: 1600px){
+    .header-container{
+        max-width: 1200px;
     }
 }
