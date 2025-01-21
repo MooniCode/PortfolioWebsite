@@ -24,9 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Send email
     if (mail($to, $email_subject, $email_body, $headers)) {
-        header("Location: index.html?success=1");
+        header("Location: contact.html?success=1");
     } else {
-        header("Location: index.html?success=0");
+        header("Location: contact.html?success=0");
     }
     exit;
 }
