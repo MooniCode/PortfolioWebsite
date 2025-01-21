@@ -26,7 +26,8 @@
     <main>
         <div class="container">
             <h1>Contact Us</h1>
-            <form id="contactForm" action="sendEmail.php" method="POST">
+            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="e6c03eb1-5192-402a-b881-41a31effebb1">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
