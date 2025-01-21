@@ -7,12 +7,11 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f5f5f5;
-    color: #333;
+    background: linear-gradient(135deg, var(--primary-color1) 0%, var(--primary-color2) 100%);
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -24,46 +23,67 @@ header {
 
 h1 {
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: #0056ac;
     margin-bottom: 1rem;
 }
 
-.projects-grid {
+.back-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
+    background-color: var(--cta-color);
+    color: var(--title-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: var(--cta-color-hover);
+}
+
+.categories-grid, .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-.project-card {
-    background: white;
+.category-card, .project-card {
+    background: var(--header-color);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-.project-card:hover {
+.category-card:hover, .project-card:hover {
     transform: translateY(-5px);
 }
 
-.project-image {
+.category-image, .project-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
-.project-content {
+.category-content, .project-content {
     padding: 1.5rem;
 }
 
-.project-title {
+.category-title, .project-title {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #2c3e50;
+    color: var(--title-color)
 }
 
-.project-description {
-    color: #666;
+.project-date {
+    font-size: 1rem;
+    color: var(--cta-color)
+}
+
+.category-description, .project-description {
+    color: var(--text-color);
     margin-bottom: 1rem;
 }
 
@@ -98,12 +118,24 @@ h1 {
     color: #0056b3;
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 1rem;
-    }
+.section-title {
+    font-size: 2.5rem;
+    color: var(--title-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+}
 
-    h1 {
+/* Adjust spacing between title and back button */
+.back-button {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section-title {
         font-size: 2rem;
+        margin-bottom: 1.5rem;
     }
 }

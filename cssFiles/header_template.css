@@ -1,41 +1,41 @@
 :root {
     /* Light mode color variables */
-    --header-color: rgb(108, 123, 149);     /* Muted blue-grey for headers */
-    --primary-color1: rgb(237, 242, 247);   /* Very light blue-grey for backgrounds */
-    --primary-color2: rgb(226, 232, 240);   /* Slightly darker blue-grey for secondary elements */
-    --text-color: rgb(30, 38, 52);          /* Dark blue-grey for main text */
-    --title-color: rgb(26, 32, 44);         /* Deeper blue-grey for titles */
-    --accent-color: rgb(40, 92, 141);      /* Vibrant blue for accents */
-    --accent-color-hover: rgb(44, 82, 130); /* Darker blue for hover states */
-    --gradient-background-circle-color: rgb(0, 0, 0); /* Lighter blue for gradients */
-    --cta-color: #ee6c4d;         /* Bright sky blue for CTA */
-    --cta-color-hover: #f08469;    /* Deeper sky blue for CTA hover */
+    --header-color: rgb(108, 123, 149);
+    --primary-color1: rgb(237, 242, 247);
+    --primary-color2: rgb(226, 232, 240);
+    --text-color: rgb(30, 38, 52);
+    --title-color: rgb(26, 32, 44);
+    --accent-color: rgb(40, 92, 141);
+    --accent-color-hover: rgb(44, 82, 130);
+    --gradient-background-circle-color: rgb(0, 0, 0);
+    --cta-color: rgb(238, 108, 77);
+    --cta-color-hover: rgb(240, 132, 105);
     --drop-shadow-color: rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode {
     /* Dark mode color variables */
-    --header-color: rgb(17, 25, 40);        /* Deep navy for headers */
-    --primary-color1: rgb(13, 17, 23);      /* Rich dark background */
-    --primary-color2: rgb(22, 27, 34);      /* Slightly lighter for secondary elements */
-    --text-color: rgb(230, 237, 243);       /* Soft white for better readability */
-    --title-color: rgb(255, 255, 255);      /* Pure white for titles */
-    --accent-color: rgb(88, 166, 255);      /* Bright blue that pops on dark backgrounds */
-    --accent-color-hover: rgb(121, 184, 255); /* Lighter blue for hover states */
-    --gradient-background-circle-color: rgb(88, 166, 255); /* Matching accent for consistency */
-    --cta-color: #ee6c4d;         /* Bright sky blue for CTA */
-    --cta-color-hover: #f08469;    /* Deeper sky blue for CTA hover */
-    --drop-shadow-color: rgba(255, 255, 255, 0.2);
+    --header-color: rgb(17, 25, 40);
+    --primary-color1: rgb(13, 17, 23);
+    --primary-color2: rgb(22, 27, 34);
+    --text-color: rgb(230, 237, 243);
+    --title-color: rgb(255, 255, 255);
+    --accent-color: rgb(88, 166, 255);
+    --accent-color-hover: rgb(121, 184, 255);
+    --gradient-background-circle-color: rgb(88, 166, 255);
+    --cta-color: rgb(238, 108, 77);
+    --cta-color-hover: rgb(240, 132, 105);
 }
 
 header {
     background-color: var(--header-color);
-    padding: 0.75rem;
+    padding: 0.9rem;
     font-family: monospace;
-    position: fixed;  /* Changed from sticky to fixed */
+    position: fixed;
+    box-shadow: 0 6px 4px var(--drop-shadow-color);
     top: 0;
-    left: 0;         /* Add this */
-    right: 0;        /* Add this */
+    left: 0;
+    right: 0;
     z-index: 1000;    
 }
 
@@ -43,12 +43,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
 .logo {
-    fill: var(--text-color);
+    fill: var(--title-color);
     height: 50px;
     width: auto;
     transition: fill 0.3s ease;
@@ -66,7 +66,7 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--title-color);
     font-weight: 600;
     transition: color 0.3s ease;
 }
@@ -79,7 +79,7 @@ nav a:hover {
 #theme-toggle {
     background: none;
     border: none;
-    color: var(--text-color);
+    color: var(--title-color);
     font-size: 1rem;
     cursor: pointer;
     padding: 0.5rem;
@@ -120,7 +120,7 @@ nav a:hover {
     .mobile-menu-btn {
         display: block;
         transition: color 0.3s ease;
-        color: var(--text-color);
+        color: var(--title-color);
     }
     .mobile-menu-btn:hover{
         color: var(--accent-color);
