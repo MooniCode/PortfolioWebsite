@@ -115,16 +115,12 @@ section {
 }
 
 .interest-card {
-    background-color: var(--primary-color1);
+    background-color: var(--header-color);
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     z-index: 1;
-}
-
-.interest-card:hover {
-    transform: translateY(-10px);
 }
 
 .interest-image {
