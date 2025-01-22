@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body {
-    font-family: monospace;
+    font-family: roboto;
     padding-top: 75px;
 }
 .hero {
@@ -116,20 +116,28 @@ body {
     transform: scaleX(-1);
     height: auto;
     display: block;
+    z-index: 1;
 }
 
 /* Featured Projects Styles */
 .featured-projects {
-    margin-top: 40px;
+    background: var(--primary-color1);
+    padding-bottom: 4rem;
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 15px;
 }
 
 .featured-projects h2 {
-    color: var(--title-color);
-    padding-bottom: 30px;
-    padding-top: 50px;
-    font-size: 2rem;
-    margin-bottom: 30px;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     text-align: center;
+    font-size: 3rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .project-videos {
@@ -143,7 +151,7 @@ body {
     flex: 1;
     min-width: 300px;
     max-width: 600px;
-    background: var(--primary-color1);
+    background: var(--header-color);
     border-radius: 16px;
     padding: 24px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -160,7 +168,6 @@ body {
 }
 
 .project-date {
-    font-family: 'JetBrains Mono', monospace;
     font-size: 0.875rem;
     color: var(--accent-color);
     margin-bottom: 16px;

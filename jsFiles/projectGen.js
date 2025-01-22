@@ -36,40 +36,35 @@ const projects = {
     webdev: [
         {
             title: "Portfolio Website",
+            date: "October 2023",
             description: "A responsive portfolio website built with modern technologies.",
             image: "/images/Content/projects/BirdAssaultMenuScreen.png",
             tags: ["HTML", "CSS", "JavaScript"],
-            demo: "https://demo-link.com",
-            github: "https://github.com/username/project1"
         },
         {
             title: "Dashboard App",
+            date: "October 2023",
             description: "An interactive dashboard for data visualization.",
             image: "/api/placeholder/400/320",
             tags: ["React", "D3.js", "Node.js"],
-            demo: "https://demo-link.com",
-            github: "https://github.com/username/project2"
         }
     ],
     gamedev: [
         {
             title: "Platform Game",
+            date: "October 2023",
             description: "A 2D platform game with pixel art graphics.",
             image: "/images/Content/projects/BirdAssaultMenuScreen.png",
             tags: ["Unity", "C#", "Pixel Art"],
-            demo: "https://demo-link.com",
-            github: "https://github.com/username/project3"
         }
     ],
     "3dart": [
         {
             title: "The Monopolist",
             date: "January 2025",
-            description: "The final assignment for Game Art 2 at DAE - Kortrijk. The kart is based of a luxury Rollce-Royce with some over exagerated shapes.",
+            description: "The final assignment for Game Art 2 at DAE. A go-kart inspired by luxury brands like Rolls-Royce and Cadillac, showcasing their signature elements through bold, exaggerated forms.",
             image: "/images/Content/projects/Kart.png",
             tags: ["Blender", "Substance Painter"],
-            demo: "https://demo-link.com",
-            github: "https://github.com/username/project4"
         },
         {
             title: "Plugger",
@@ -77,8 +72,6 @@ const projects = {
             description: "Second assignment for Game Art 2 at DAE - Kortrijk. It's a walking extension cord called Plugger!",
             image: "/images/Content/projects/Robuddy.png",
             tags: ["Blender", "Substance Painter"],
-            demo: "https://demo-link.com",
-            github: "https://github.com/username/project4"
         },
         {
             title: "Sea Side Diorama",
@@ -92,7 +85,7 @@ const projects = {
             date: "March - April 2024",
             description: "The final assignment for 3D1 at DAE - Kortrijk. It's a scene that takes place somwhere in Norway.",
             image: "/images/Content/projects/Desk.png",
-            tags: ["Maya", "Photoshop"]
+            tags: ["Blender", "Substance Painter"]
         },
     ]
 };
@@ -114,10 +107,10 @@ function createCategoryCard(category) {
 function createProjectCard(project) {
     return `
         <div class="project-card">
-            <img src="${project.image}" alt="${project.title}" class="project-image">
             <div class="project-content">
-                <h2 class="project-date">${project.date}</h2>
                 <h2 class="project-title">${project.title}</h2>
+                <h2 class="project-date">${project.date}</h2>
+                <img src="${project.image}" alt="${project.title}" class="project-image">
                 <p class="project-description">${project.description}</p>
                 <div class="project-tags">
                     ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
@@ -133,7 +126,7 @@ function showCategory(categoryId) {
     const categoryProjects = projects[categoryId];
     
     document.getElementById('mainContent').innerHTML = `
-        <h1 class="section-title">${category.title}</h1>
+        <h1 class="section-title">${"Projects > " + category.title}</h1>
         <a href="#" class="back-button" onclick="showCategories(event)">← Back to Categories</a>
         <div class="projects-grid">
             ${categoryProjects.map(project => createProjectCard(project)).join('')}
@@ -149,7 +142,8 @@ function showCategories(event) {
     if (event) event.preventDefault();
     
     document.getElementById('mainContent').innerHTML = `
-        <h1 class="section-title">Categories</h1>
+        <h1 class="section-title1">Projects</h1>
+        <h2 class="section-title2">Categories</h2>
         <div class="categories-grid">
             ${categories.map(category => createCategoryCard(category)).join('')}
         </div>

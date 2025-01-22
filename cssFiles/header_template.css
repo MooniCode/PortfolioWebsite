@@ -1,4 +1,18 @@
 :root {
+    /* Dark mode color variables */
+    --header-color: rgb(17, 25, 40);
+    --primary-color1: rgb(13, 17, 23);
+    --primary-color2: rgb(22, 27, 34);
+    --text-color: rgb(230, 237, 243);
+    --title-color: rgb(255, 255, 255);
+    --accent-color: rgb(88, 166, 255);
+    --accent-color-hover: rgb(121, 184, 255);
+    --gradient-background-circle-color: rgb(88, 166, 255);
+    --cta-color: rgb(238, 108, 77);
+    --cta-color-hover: rgb(240, 132, 105);
+}
+
+.dark-mode {
     /* Light mode color variables */
     --header-color: #6c7b95;
     --primary-color1: rgb(237, 242, 247);
@@ -11,20 +25,6 @@
     --cta-color: rgb(238, 108, 77);
     --cta-color-hover: rgb(240, 132, 105);
     --drop-shadow-color: rgba(0, 0, 0, 0.2);
-}
-
-.dark-mode {
-    /* Dark mode color variables */
-    --header-color: rgb(17, 25, 40);
-    --primary-color1: rgb(13, 17, 23);
-    --primary-color2: rgb(22, 27, 34);
-    --text-color: rgb(230, 237, 243);
-    --title-color: rgb(255, 255, 255);
-    --accent-color: rgb(88, 166, 255);
-    --accent-color-hover: rgb(121, 184, 255);
-    --gradient-background-circle-color: rgb(88, 166, 255);
-    --cta-color: rgb(238, 108, 77);
-    --cta-color-hover: rgb(240, 132, 105);
 }
 
 header {

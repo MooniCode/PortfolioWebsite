@@ -6,14 +6,14 @@ function initializeTheme() {
     function updateTheme(isDark) {
         // Update classes
         document.documentElement.classList.toggle('dark-mode', isDark);
-        icon.classList.toggle('fa-moon', !isDark);
-        icon.classList.toggle('fa-sun', isDark);
+        icon.classList.toggle('fa-sun', !isDark);
+        icon.classList.toggle('fa-moon', isDark);
         
         // Update profile image source based on theme
         if (profileImage) {
             const imagePath = isDark 
-                ? '/images/Content/ProfilePicDark.png'
-                : '/images/Content/ProfilePicLight.png';
+                ? '/images/Content/ProfilePicLight.png'
+                : '/images/Content/ProfilePicDark.png';
             profileImage.src = imagePath;
         }
         
