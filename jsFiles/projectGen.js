@@ -23,39 +23,63 @@ const categories = [
         title: "Film",
         description: "While studying at a film and media school I produced various film projects that sparked my interest in cinematography and visual storytelling.",
         image: "/images/Content/projects/Docport.jpg",
-    },
-    {
-        id: "youtube",
-        title: "Youtube",
-        description: "While I currently focus on gaming content, I'm eager to expand into creating videos that document and explore the game development process.",
-        image: "/images/Content/projects/TouchGrass.jpg",
     }
 ];
 
 const projects = {
+    film: [
+        {
+            title: "Coporate video - Flanders Best",
+            date: "June 2023",
+            description: "For this assignment in Graphical Media Design at Artevelde, I made a corporate video for a company called Flanders Best.",
+            image: "/images/Content/projects/FlandersBest.jpg",
+            tags: ["Premiere Pro", "Camera"],
+        },
+        {
+            title: "Documentary Portret - Filip Ponseele",
+            date: "January 2023",
+            description: "For this assignment in Graphical Media Design at Artevelde, I made a small documentary about a blacksmith called Philip Ponseele.",
+            image: "/images/Content/projects/Docport.jpg",
+            tags: ["Premiere Pro", "Camera"],
+        }
+    ],
     webdev: [
         {
             title: "Portfolio Website",
-            date: "October 2023",
-            description: "A responsive portfolio website built with modern technologies.",
-            image: "/images/Content/projects/BirdAssaultMenuScreen.png",
+            date: "January 2025",
+            description: "Believe it or not but the website you are on right now is completely designed and developed by me!",
+            image: "/images/Content/projects/portfolioWebsite.jpg",
             tags: ["HTML", "CSS", "JavaScript"],
         },
         {
-            title: "Dashboard App",
-            date: "October 2023",
-            description: "An interactive dashboard for data visualization.",
-            image: "/api/placeholder/400/320",
-            tags: ["React", "D3.js", "Node.js"],
+            title: "Game Development Studio Website",
+            date: "November 2024",
+            description: "This website was completely designed and developed by me. Using Three.js to render 3D-moddels to the web. It was made as part of an assignment for Communication at DAE.",
+            image: "/images/Content/projects/microwaveStudiosWebsite.jpg",
+            tags: ["JavaScript", "Three.js", "Node.js"],
         }
     ],
     gamedev: [
         {
-            title: "Platform Game",
-            date: "October 2023",
-            description: "A 2D platform game with pixel art graphics.",
-            image: "/images/Content/projects/BirdAssaultMenuScreen.png",
+            title: "Slother",
+            date: "September 2024",
+            description: "The result of a two day game jam with the theme Nature always wins. Our team consisted of 3 people including Emiliano Dichter, Colin Berens and me. The game is made in Unity.",
+            image: "/images/Content/projects/slother.jpg",
             tags: ["Unity", "C#", "Pixel Art"],
+        },
+        {
+            title: "Grand Theft Fridge",
+            date: "April 2024",
+            description: "Grand Theft Fridge is a game where you need to collect food out of a fridge without making to much noise. It's a party game for up to 4 people. The game was made as the final assignment for Game Design 1 in DAE. The team consisted of 5 people including Nand Khalhofer, Timoth Vanstaen, Matteo Zoda, Denis Silov, Nathan Emmett and me.",
+            image: "/images/Content/projects/GrandTheftFridge.jpg",
+            tags: ["Unity", "C#"],
+        },
+        {
+            title: "Bird Assault",
+            date: "October 2023",
+            description: "This game was made for the final exam of PD1 at DAE. You control a bird that needs to evade enemies, collect worms and find his way back to the nest.",
+            image: "/images/Content/projects/BirdAssaultMenuScreen.png",
+            tags: ["Monogame", "C#", "Pixel Art"],
         }
     ],
     "3dart": [
@@ -69,24 +93,24 @@ const projects = {
         {
             title: "Plugger",
             date: "November - December 2024",
-            description: "Second assignment for Game Art 2 at DAE - Kortrijk. It's a walking extension cord called Plugger!",
+            description: "Second assignment for Game Art 2 at DAE. It's a walking extension cord called Plugger!",
             image: "/images/Content/projects/Robuddy.png",
             tags: ["Blender", "Substance Painter"],
         },
         {
-            title: "Sea Side Diorama",
-            date: "November-December 2023",
-            description: "The final assignment for 3D1 at DAE - Kortrijk. It's a scene that takes place somwhere in Norway.",
-            image: "/images/Content/projects/Diorama.jpg",
-            tags: ["Maya", "Photoshop"]
-        },
-        {
             title: "A knights Desk",
             date: "March - April 2024",
-            description: "The final assignment for 3D1 at DAE - Kortrijk. It's a scene that takes place somwhere in Norway.",
+            description: "Second assignment for Game Art 1 at DAE. For the knight who this desk belongs to, defeating dragons and freeing princesses is a day job.",
             image: "/images/Content/projects/Desk.png",
             tags: ["Blender", "Substance Painter"]
         },
+        {
+            title: "Sea Side Diorama",
+            date: "November-December 2023",
+            description: "The final assignment for 3D1 at DAE. It's a scene that takes place somwhere in Norway.",
+            image: "/images/Content/projects/Diorama.jpg",
+            tags: ["Maya", "Photoshop"]
+        }
     ]
 };
 
@@ -120,36 +144,48 @@ function createProjectCard(project) {
     `;
 }
 
-// Function to show category projects
 function showCategory(categoryId) {
     const category = categories.find(c => c.id === categoryId);
     const categoryProjects = projects[categoryId];
     
     document.getElementById('mainContent').innerHTML = `
-        <h1 class="section-title">${"Projects > " + category.title}</h1>
-        <a href="#" class="back-button" onclick="showCategories(event)">← Back to Categories</a>
-        <div class="projects-grid">
-            ${categoryProjects.map(project => createProjectCard(project)).join('')}
+        <div class="title-background">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="#" onclick="showCategories(event)">Projects</a>
+                    <span class="breadcrumb-separator">></span>
+                    <span>${category.title}</span>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="projects-grid">
+                ${categoryProjects.map(project => createProjectCard(project)).join('')}
+            </div>
         </div>
     `;
 
-    // Update URL without page reload
     window.history.pushState({categoryId}, '', `#${categoryId}`);
 }
 
-// Function to show main categories page
+// Update the showCategories function
 function showCategories(event) {
     if (event) event.preventDefault();
     
     document.getElementById('mainContent').innerHTML = `
-        <h1 class="section-title1">Projects</h1>
-        <h2 class="section-title2">Categories</h2>
-        <div class="categories-grid">
-            ${categories.map(category => createCategoryCard(category)).join('')}
+        <div class="title-background">
+            <div class="container">
+                <h1 class="section-title1">Projects</h1>
+                <h2 class="section-title2">Categories</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="categories-grid">
+                ${categories.map(category => createCategoryCard(category)).join('')}
+            </div>
         </div>
     `;
 
-    // Update URL without page reload
     window.history.pushState({}, '', window.location.pathname);
 }
 
